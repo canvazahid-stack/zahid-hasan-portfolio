@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Zahid Hasan - Executive Professional CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --text-main: #000000; 
+            --text-light: #1e293b;
+            --bg-sidebar: #f8fafc;
+        }
+
+        /* প্রিন্ট সেটিংস: হেডার, ফুটার রিমুভ এবং এক পেজে ফিট করা */
+        @page {
+            size: A4;
+            margin: 0;
+        }
+        
+        @media print {
+            body { padding: 0 !important; background: #fff !important; }
+            .cv-container { 
+                box-shadow: none !important; 
+                border-radius: 0 !important; 
+                width: 100% !important; 
+                height: 296mm !important; /* A4 height limit */
+                overflow: hidden;
+            }
+            .no-print { display: none !important; }
+            .sidebar { background: #f8fafc !important; -webkit-print-color-adjust: exact; }
+            .skill-tag, .cert-card, .edu-card { border: 1px solid #000 !important; }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #e2e8f0; color: var(--text-main); line-height: 1.4; padding: 20px 0; }
+
+        .cv-container {
+            max-width: 900px; margin: 0 auto; background: #fff;
+            display: grid; grid-template-columns: 280px 1fr;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12); border-radius: 16px; overflow: hidden;
+            min-height: 296mm;
+        }
+
+        /* Sidebar Section */
+        .sidebar { background: var(--bg-sidebar); padding: 35px 25px; border-right: 1px solid #e2e8f0; }
+        .profile-img { width: 150px; height: 150px; border-radius: 20px; background: #e2e8f0; margin-bottom: 25px; overflow: hidden; border: 4px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .profile-img img { width: 100%; height: 100%; object-fit: cover; }
+
+        .sidebar-section { margin-bottom: 28px; }
+        .sidebar-title { font-size: 13px; font-weight: 800; text-transform: uppercase; color: var(--accent); letter-spacing: 1.5px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; border-bottom: 2px solid #e2e8f0; padding-bottom: 4px; }
+        
+        .contact-item { display: flex; align-items: center; gap: 10px; font-size: 12px; color: var(--text-main); text-decoration: none; margin-bottom: 10px; font-weight: 600; }
+        .contact-item i { color: var(--accent); width: 14px; }
+
+        .skill-tag { display: inline-block; background: #fff; border: 1px solid #cbd5e1; padding: 4px 10px; border-radius: 6px; font-size: 10.5px; font-weight: 700; margin: 0 2px 6px 0; }
+
+        .edu-card { margin-bottom: 8px; padding: 10px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 12px; }
+        .edu-card strong { color: var(--primary); display: block; margin-bottom: 2px; }
+
+        /* Main Content Section */
+        .main-content { padding: 45px 45px; }
+        .header { margin-bottom: 30px; }
+        .name { font-size: 38px; font-weight: 800; color: #000; letter-spacing: -1.5px; line-height: 1; }
+        .designation { font-size: 19px; color: var(--accent); font-weight: 700; margin-top: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        
+        .section-title { font-size: 17px; font-weight: 800; color: #000; margin: 25px 0 15px; display: flex; align-items: center; gap: 10px; text-transform: uppercase; border-bottom: 2px solid #f1f5f9; padding-bottom: 4px; }
+        .section-title i { color: var(--accent); }
+
+        .exp-item { margin-bottom: 22px; position: relative; padding-left: 18px; border-left: 2px solid #0f172a; }
+        .exp-item::before { content: ""; position: absolute; left: -7px; top: 0; width: 12px; height: 12px; background: var(--accent); border-radius: 50%; border: 2px solid #fff; }
+        
+        .exp-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+        .company { font-weight: 800; font-size: 17px; color: #000; }
+        .duration { font-size: 11.5px; color: #000; font-weight: 700; background: #f1f5f9; padding: 2px 10px; border-radius: 12px; }
+        .role { font-size: 14px; font-weight: 700; color: var(--accent); margin-bottom: 6px; }
+        .desc-list { font-size: 13px; color: #000; list-style: none; line-height: 1.5; }
+        .desc-list li { margin-bottom: 6px; position: relative; padding-left: 14px; text-align: justify; }
+        .desc-list li::before { content: "•"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+
+        .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .cert-card { background: #f8fafc; padding: 10px 14px; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 12px; }
+        .cert-card strong { color: #000; display: block; margin-bottom: 2px; }
+        .cert-card span { font-weight: 600; color: #475569; }
+
+        .ref-box { margin-top: 20px; font-size: 13px; color: #000; font-weight: 600; line-height: 1.6; }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        <aside class="sidebar">
+            <div class="profile-img">
+                <img src="profile.png" alt="Md. Zahid Hasan" onerror="this.style.display='none'">
+            </div>
+
+            <div class="sidebar-section">
+                <h2 class="sidebar-title">Contact</h2>
+                <div class="contact-item"><i class="fas fa-phone"></i> +880 1711 183 109</div>
+                <div class="contact-item"><i class="fas fa-envelope"></i> zahidhasan1118@gmail.com</div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Nazipur, Naogaon</div>
+                <div class="contact-item"><i class="fab fa-linkedin"></i> zahidhasan1118</div>
+                <div class="contact-item"><i class="fab fa-facebook"></i> zahidhasan1118</div>
+            </div>
+
+            <div class="sidebar-section">
+                <h2 class="sidebar-title">Expertise</h2>
+                <div class="skill-tag">Corporate Drafting</div>
+                <div class="skill-tag">Process Automation</div>
+                <div class="skill-tag">Advanced Excel</div>
+                <div class="skill-tag">AI Workflows</div>
+                <div class="skill-tag">Tally Prime</div>
+                <div class="skill-tag">Graphic Design</div>
+                <div class="skill-tag">Facebook Marketing</div>
+                <div class="skill-tag">Regulatory Affairs</div>
+            </div>
+
+            <div class="sidebar-section">
+                <h2 class="sidebar-title">Education</h2>
+                <div class="edu-card">
+                    <strong>MSS (Political Science)</strong>
+                    <span>National University | 2016</span>
+                </div>
+                <div class="edu-card">
+                    <strong>BA (Political Science)</strong>
+                    <span>National University | 2013</span>
+                </div>
+                <div class="edu-card">
+                    <strong>Diploma in Computer Science</strong>
+                    <span>Shuvo Technical | 2012</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h1 class="name">Md. Zahid Hasan</h1>
+                <p class="designation">Deputy Manager (Admin & Operations)</p>
+            </header>
+
+            <h2 class="section-title"><i class="fas fa-user-tie"></i> Professional Profile</h2>
+            <p style="font-size: 13.5px; color: #000; text-align: justify; font-weight: 500; margin-bottom: 5px;">
+                Strategic and efficiency-driven Operations & Administration Manager with over 10 years of experience. Expert in combining administrative leadership with commercial acumen to drive growth. Adept at utilizing Advanced Excel and AI tools to develop automated systems.
+            </p>
+
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
+            
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="company">Alliance Consortium Ltd.</span>
+                    <span class="duration">Jan 2015 – Present</span>
+                </div>
+                <div class="role">Deputy Manager</div>
+                <ul class="desc-list">
+                    <li>Drafting commercial agreements, legal notices, and MoUs.</li>
+                    <li>Designed Automated Excel Formats for inventory and financial tracking.</li>
+                    <li>Managing liaison with BRTA, overseeing documentation for 200+ vehicle units.</li>
+                    <li>Managing a commercial portfolio worth over 20 Crore BDT with zero discrepancy.</li>
+                </ul>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-header">
+                    <span class="company">Achar King (E-commerce)</span>
+                    <span class="duration">Jan 2022 – Present</span>
+                </div>
+                <div class="role">Founder & CEO</div>
+                <ul class="desc-list">
+                    <li>Developed operational and legal frameworks for supply chain and digital growth.</li>
+                </ul>
+            </div>
+
+            <h2 class="section-title"><i class="fas fa-award"></i> Certifications & Training</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <strong>Entrepreneurship & Leadership</strong>
+                    <span>Nijer Bolar Moto Ekta Golpo Foundation (2022)</span>
+                </div>
+                <div class="cert-card">
+                    <strong>Facebook Marketing</strong>
+                    <span>10 Minute School (2022)</span>
+                </div>
+                <div class="cert-card">
+                    <strong>Graphic Designing (PowerPoint)</strong>
+                    <span>10 Minute School (2022)</span>
+                </div>
+                <div class="cert-card">
+                    <strong>Tally ERP 9 Certified</strong>
+                    <span>Trust Solution (2015)</span>
+                </div>
+            </div>
+
+            <h2 class="section-title"><i class="fas fa-users"></i> Reference</h2>
+            <div class="ref-box">
+                Mohammad Aminul Islam <br>
+                Executive Director, Alliance Consortium Ltd. <br>
+                Email: alliance.bd@gmail.com
+            </div>
+
+        </main>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;" class="no-print">
+        <button onclick="window.print()" style="padding: 12px 25px; background: var(--primary); color: #fff; border: none; border-radius: 8px; cursor: pointer; font-weight: 700; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <i class="fas fa-print"></i> Download CV (One Page)
+        </button>
+    </div>
+
+</body>
+</html>
