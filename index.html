@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1000, initial-scale=0.3, maximum-scale=5.0, user-scalable=yes">
     <title>Md. Zahid Hasan - Executive Professional CV</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,19 +15,18 @@
             --bg-sidebar: #f8fafc;
         }
 
-        /* প্রিন্ট সেটিংস: হেডার, ফুটার রিমুভ এবং এক পেজে ফিট করা */
         @page {
             size: A4;
             margin: 0;
         }
         
         @media print {
-            body { padding: 0 !important; background: #fff !important; }
+            body { padding: 0 !important; background: #fff !important; min-width: auto !important; }
             .cv-container { 
                 box-shadow: none !important; 
                 border-radius: 0 !important; 
                 width: 100% !important; 
-                height: 296mm !important; /* A4 height limit */
+                height: 296mm !important; 
                 overflow: hidden;
             }
             .no-print { display: none !important; }
@@ -36,7 +35,17 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #e2e8f0; color: var(--text-main); line-height: 1.4; padding: 20px 0; }
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background: #e2e8f0; 
+            color: var(--text-main); 
+            line-height: 1.4; 
+            padding: 20px 0;
+            /* ডানে-বামে টানার সুবিধা নিশ্চিত করতে কন্টেইনারের সমান মিনিমাম উইডথ */
+            min-width: 1000px; 
+            overflow-x: auto; 
+        }
 
         .cv-container {
             max-width: 900px; margin: 0 auto; background: #fff;
@@ -45,7 +54,6 @@
             min-height: 296mm;
         }
 
-        /* Sidebar Section */
         .sidebar { background: var(--bg-sidebar); padding: 35px 25px; border-right: 1px solid #e2e8f0; }
         .profile-img { width: 150px; height: 150px; border-radius: 20px; background: #e2e8f0; margin-bottom: 25px; overflow: hidden; border: 4px solid #fff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .profile-img img { width: 100%; height: 100%; object-fit: cover; }
@@ -61,7 +69,6 @@
         .edu-card { margin-bottom: 8px; padding: 10px; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 12px; }
         .edu-card strong { color: var(--primary); display: block; margin-bottom: 2px; }
 
-        /* Main Content Section */
         .main-content { padding: 45px 45px; }
         .header { margin-bottom: 30px; }
         .name { font-size: 38px; font-weight: 800; color: #000; letter-spacing: -1.5px; line-height: 1; }
@@ -203,7 +210,7 @@
         </main>
     </div>
 
-    <div style="text-align: center; margin-top: 20px;" class="no-print">
+    <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;" class="no-print">
         <button onclick="window.print()" style="padding: 12px 25px; background: var(--primary); color: #fff; border: none; border-radius: 8px; cursor: pointer; font-weight: 700; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
             <i class="fas fa-print"></i> Download CV (One Page)
         </button>
