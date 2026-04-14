@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --navy: #0d1f3c;
-            --blue: #1a56db;
-            --blue-light: #dbeafe;
-            --gray-50: #f8fafc;
-            --gray-200: #e2e8f0;
-            --gray-400: #94a3b8;
-            --gray-600: #475569;
-            --gray-800: #1e293b;
+            --navy:  #0d1f3c;
+            --blue:  #1e63ee;
+            --blu2:  #dbeafe;
+            --g50:   #f8fafc;
+            --g200:  #e2e8f0;
+            --g400:  #94a3b8;
+            --g600:  #3d526b;
+            --g800:  #1a2a3a;
             --white: #ffffff;
         }
 
@@ -24,264 +24,308 @@
 
         body {
             font-family: 'Barlow', sans-serif;
-            background: #dde3ef;
+            background: #cfd6e6;
             color: #0a0a0a;
-            padding: 24px 0 40px;
+            padding: 20px 0 36px;
             min-width: 1020px;
         }
 
         .cv-wrap {
             width: 794px;
+            height: 1123px;
             margin: 0 auto;
             background: #fff;
-            box-shadow: 0 24px 64px rgba(0,0,0,0.18);
-            border-radius: 4px;
+            box-shadow: 0 20px 56px rgba(0,0,0,0.22);
+            border-radius: 3px;
             overflow: hidden;
             display: grid;
-            grid-template-columns: 220px 1fr;
-            height: 1123px;
+            grid-template-columns: 224px 1fr;
         }
 
-        /* ══ SIDEBAR ══════════════════════════════════════════ */
+        /* ════ SIDEBAR ════ */
         .sidebar {
             background: var(--navy);
             color: var(--white);
-            padding: 28px 18px 20px 20px;
+            padding: 30px 19px 22px 21px;
             display: flex;
             flex-direction: column;
             overflow: hidden;
         }
 
         .photo-wrap {
-            width: 96px; height: 96px;
-            border-radius: 6px; overflow: hidden;
-            border: 3px solid rgba(255,255,255,0.18);
-            margin-bottom: 18px;
-            background: rgba(255,255,255,0.08);
+            width: 100px; height: 100px;
+            border-radius: 7px; overflow: hidden;
+            border: 3px solid rgba(255,255,255,0.22);
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.1);
             flex-shrink: 0;
         }
-        .photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
-        .photo-placeholder {
-            width: 100%; height: 100%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 30px; color: rgba(255,255,255,0.3);
+        .photo-wrap img { width:100%; height:100%; object-fit:cover; }
+        .photo-ph {
+            width:100%; height:100%;
+            display:flex; align-items:center; justify-content:center;
+            font-size:32px; color:rgba(255,255,255,0.35);
         }
 
-        .sb-block { margin-bottom: 17px; flex-shrink: 0; }
+        .sb-block { margin-bottom: 18px; flex-shrink: 0; }
 
         .sb-title {
             font-family: 'Barlow Condensed', sans-serif;
-            font-size: 10px; font-weight: 800;
+            font-size: 10.5px; font-weight: 800;
             text-transform: uppercase; letter-spacing: 2px;
-            color: #60a5fa; margin-bottom: 9px;
+            color: #93c5fd;
+            margin-bottom: 10px;
             display: flex; align-items: center; gap: 6px;
         }
-        .sb-title::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.12); }
+        .sb-title::after { content:''; flex:1; height:1px; background:rgba(255,255,255,0.14); }
 
         .contact-row {
             display: flex; align-items: flex-start; gap: 9px;
-            font-size: 10.5px; font-weight: 500;
-            color: rgba(255,255,255,0.85);
-            margin-bottom: 7px; line-height: 1.4;
+            font-size: 12px; font-weight: 500;
+            color: #e2eaf6;
+            margin-bottom: 8px; line-height: 1.4;
         }
-        .contact-row i { color: #60a5fa; width: 12px; margin-top: 1px; font-size: 10px; flex-shrink: 0; }
+        .contact-row i { color:#93c5fd; width:13px; margin-top:2px; font-size:11px; flex-shrink:0; }
 
-        .skills-list { display: flex; flex-wrap: wrap; gap: 4px; }
+        .skills-list { display:flex; flex-wrap:wrap; gap:5px; }
         .sk {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.18);
-            color: rgba(255,255,255,0.9);
-            padding: 2.5px 7px; border-radius: 3px;
-            font-size: 9.5px; font-weight: 600;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.22);
+            color: #e8f0fc;
+            padding: 3px 8px; border-radius:3px;
+            font-size: 10.5px; font-weight: 600;
         }
 
-        .edu-item { margin-bottom: 9px; }
-        .edu-degree { font-size: 11px; font-weight: 700; color: #fff; line-height: 1.3; }
-        .edu-inst { font-size: 9.5px; color: rgba(255,255,255,0.6); margin-top: 1px; }
+        .edu-item { margin-bottom: 10px; }
+        .edu-deg  { font-size:12.5px; font-weight:700; color:#fff; line-height:1.3; }
+        .edu-inst { font-size:11px; color:#a8bcd8; margin-top:2px; }
 
-        .lang-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 7px; }
-        .lang-name { font-size: 10.5px; font-weight: 600; color: rgba(255,255,255,0.85); }
-        .lang-dots { display: flex; gap: 4px; }
-        .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.15); }
-        .dot.on { background: #60a5fa; }
+        .lang-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+        .lang-nm  { font-size:12px; font-weight:600; color:#e2eaf6; }
+        .dots     { display:flex; gap:4px; }
+        .dot      { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.18); }
+        .dot.on   { background:#60a5fa; }
 
-        /* ══ MAIN ═════════════════════════════════════════════ */
-        .main { padding: 28px 34px 20px 30px; overflow: hidden; }
+        /* ════ MAIN ════ */
+        .main {
+            padding: 28px 36px 20px 30px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
 
         .cv-name {
             font-family: 'Barlow Condensed', sans-serif;
-            font-size: 41px; font-weight: 800;
-            color: var(--navy); letter-spacing: -1px; line-height: 1;
-            text-transform: uppercase;
+            font-size: 44px; font-weight:800;
+            color: var(--navy); letter-spacing:-1px; line-height:1;
+            text-transform:uppercase;
         }
         .cv-title {
-            font-size: 11.5px; font-weight: 700;
-            color: var(--blue); text-transform: uppercase;
-            letter-spacing: 2.5px; margin-top: 4px;
+            font-size: 12.5px; font-weight:700;
+            color: var(--blue); text-transform:uppercase;
+            letter-spacing:2.5px; margin-top:5px;
         }
-        .header-bar {
-            height: 3px;
-            background: linear-gradient(90deg, var(--navy) 0%, var(--blue) 55%, transparent 100%);
-            margin: 10px 0 13px; border-radius: 2px;
+        .hbar {
+            height:3px;
+            background:linear-gradient(90deg, var(--navy) 0%, var(--blue) 55%, transparent 100%);
+            margin:11px 0 12px; border-radius:2px;
         }
 
         .summary {
-            font-size: 11px; font-weight: 500;
-            color: var(--gray-600); line-height: 1.6; text-align: justify;
-            padding: 9px 12px;
-            background: var(--gray-50);
+            font-size: 12.5px; font-weight:500;
+            color: var(--g600); line-height:1.65; text-align:justify;
+            padding: 10px 13px;
+            background: #f1f6fe;
             border-left: 3px solid var(--blue);
             border-radius: 0 4px 4px 0;
         }
 
         .sec-title {
             font-family: 'Barlow Condensed', sans-serif;
-            font-size: 13px; font-weight: 800;
-            text-transform: uppercase; letter-spacing: 1.5px;
+            font-size: 14px; font-weight:800;
+            text-transform:uppercase; letter-spacing:1.5px;
             color: var(--navy);
-            display: flex; align-items: center; gap: 8px;
-            margin-bottom: 10px; margin-top: 15px;
+            display:flex; align-items:center; gap:8px;
+            margin-bottom:9px; margin-top:14px;
         }
-        .sec-title i { color: var(--blue); font-size: 11.5px; }
-        .sec-title::after { content: ''; flex: 1; height: 1.5px; background: var(--gray-200); }
+        .sec-title i { color:var(--blue); font-size:12.5px; }
+        .sec-title::after { content:''; flex:1; height:1.5px; background:var(--g200); }
 
-        /* Achievements */
-        .achieve-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-        .achieve-card {
-            background: var(--blue-light);
-            border: 1px solid #bfdbfe;
-            border-radius: 6px; padding: 8px 10px; text-align: center;
+        /* Achievements — compact */
+        .ach-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:7px; }
+        .ach-card {
+            background: #e8f1fd;
+            border: 1.5px solid #b3cef5;
+            border-radius:6px;
+            padding: 6px 8px;   /* smaller */
+            text-align:center;
         }
-        .achieve-num {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-size: 21px; font-weight: 800; color: var(--blue); line-height: 1;
+        .ach-num {
+            font-family:'Barlow Condensed',sans-serif;
+            font-size:20px; font-weight:800; color:#1348b8; line-height:1;
         }
-        .achieve-label { font-size: 9px; font-weight: 600; color: var(--gray-600); margin-top: 2px; line-height: 1.3; }
+        .ach-lbl { font-size:10px; font-weight:600; color:#2d4a7a; margin-top:2px; line-height:1.25; }
 
         /* Experience */
-        .exp-block { margin-bottom: 11px; }
-        .exp-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2px; }
-        .exp-company { font-size: 13px; font-weight: 800; color: var(--navy); }
-        .exp-date {
-            font-size: 9.5px; font-weight: 700;
-            color: var(--white); background: var(--navy);
-            padding: 2px 8px; border-radius: 20px; white-space: nowrap; flex-shrink: 0;
+        .exp-block { margin-bottom:11px; }
+        .exp-top   { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:2px; }
+        .exp-co    { font-size:14px; font-weight:800; color:var(--navy); }
+        .exp-date  {
+            font-size:10.5px; font-weight:700;
+            color:#fff; background:var(--navy);
+            padding:2px 9px; border-radius:20px;
+            white-space:nowrap; flex-shrink:0;
         }
-        .exp-role { font-size: 11px; font-weight: 700; color: var(--blue); margin-bottom: 5px; }
-        .exp-bullets { list-style: none; }
-        .exp-bullets li {
-            font-size: 11px; font-weight: 500; color: var(--gray-800);
-            padding-left: 13px; position: relative;
-            margin-bottom: 3px; line-height: 1.48; text-align: justify;
+        .exp-role  { font-size:12.5px; font-weight:700; color:var(--blue); margin-bottom:5px; }
+        .exp-ul    { list-style:none; }
+        .exp-ul li {
+            font-size:12.5px; font-weight:500; color:var(--g800);
+            padding-left:14px; position:relative;
+            margin-bottom:3.5px; line-height:1.5; text-align:justify;
         }
-        .exp-bullets li::before { content: "▸"; position: absolute; left: 0; color: var(--blue); font-size: 9px; top: 2px; }
+        .exp-ul li::before { content:"▸"; position:absolute; left:0; color:var(--blue); font-size:10px; top:2px; }
 
-        /* Certifications — 3-column */
-        .cert-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+        /* Certifications */
+        .cert-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; }
         .cert-card {
-            background: var(--gray-50); border: 1px solid var(--gray-200);
-            border-radius: 5px; padding: 7px 9px;
-            display: flex; gap: 7px; align-items: flex-start;
+            background:var(--g50); border:1px solid var(--g200);
+            border-radius:5px; padding:8px 10px;
+            display:flex; gap:8px; align-items:flex-start;
         }
-        .cert-card.anthropic { background: #f0fdf4; border: 1.5px solid #86efac; }
-        .cert-card.tenms     { background: #fff7f7; border: 1.5px solid #fca5a5; }
+        .cert-card.anth { background:#edfbf3; border:1.5px solid #6ee7a0; }
+        .cert-card.tenm { background:#fff4f4; border:1.5px solid #fca5a5; }
+        .ci      { color:var(--blue); font-size:12px; margin-top:1px; flex-shrink:0; }
+        .ci.grn  { color:#15803d; }
+        .ci.red  { color:#c42b2b; }
+        .cn      { font-size:11.5px; font-weight:700; color:var(--navy); line-height:1.3; }
+        .co      { font-size:10px; font-weight:500; color:var(--g400); margin-top:2px; }
+        .co.grn  { color:#15803d; font-weight:600; }
+        .co.red  { color:#c42b2b; font-weight:600; }
 
-        .cert-icon { color: var(--blue); font-size: 11px; margin-top: 1px; flex-shrink: 0; }
-        .cert-icon.green { color: #16a34a; }
-        .cert-icon.red   { color: #dc2626; }
-
-        .cert-name { font-size: 10px; font-weight: 700; color: var(--navy); line-height: 1.3; }
-        .cert-org  { font-size: 9px; font-weight: 500; color: var(--gray-400); margin-top: 2px; }
-        .cert-org.green { color: #16a34a; font-weight: 600; }
-        .cert-org.red   { color: #dc2626; font-weight: 600; }
-
-        /* Reference */
+        /* Reference — no avatar, simple card */
         .ref-box {
-            background: var(--gray-50); border: 1px solid var(--gray-200);
-            border-radius: 6px; padding: 10px 14px;
-            display: flex; gap: 12px; align-items: center;
+            background: var(--g50);
+            border: 1px solid var(--g200);
+            border-radius: 6px;
+            padding: 11px 16px;
+            margin-top: 14px;
         }
-        .ref-avatar {
-            width: 36px; height: 36px; border-radius: 50%;
-            background: var(--navy); color: #fff;
-            font-size: 12px; font-weight: 800;
-            display: flex; align-items: center; justify-content: center;
-            flex-shrink: 0; font-family: 'Barlow Condensed', sans-serif;
+        .ref-nm   { font-size:13px; font-weight:800; color:var(--navy); }
+        .ref-pos  { font-size:11px; font-weight:500; color:var(--g600); margin-top:3px; }
+        .ref-em   {
+            font-size:11px; color:var(--blue); margin-top:3px;
+            display:flex; align-items:center; gap:5px;
         }
-        .ref-name { font-size: 12px; font-weight: 800; color: var(--navy); }
-        .ref-pos  { font-size: 10px; font-weight: 500; color: var(--gray-600); margin-top: 2px; }
-        .ref-email{ font-size: 10px; color: var(--blue); margin-top: 3px; }
 
-        /* ══ PRINT ════════════════════════════════════════════ */
+        /* ════ PRINT ════
+           No background graphics → light theme with subtle shadow/border
+           Background graphics ON → dark sidebar kept               */
         @media print {
-            * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-            body { background: #fff !important; padding: 0 !important; min-width: auto !important; }
-            .no-print { display: none !important; }
+            * { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+            body { background:#fff !important; padding:0 !important; min-width:auto !important; }
+            .no-print { display:none !important; }
+
             .cv-wrap {
-                width: 210mm !important; height: 297mm !important;
-                max-height: 297mm !important;
-                box-shadow: none !important; border-radius: 0 !important;
-                grid-template-columns: 193px 1fr !important;
-                overflow: hidden !important;
+                width:210mm !important; height:297mm !important;
+                max-height:297mm !important;
+                border-radius:0 !important; overflow:hidden !important;
+                grid-template-columns:200px 1fr !important;
+                /* subtle shadow visible in PDF even without bg graphics */
+                box-shadow: inset -1px 0 0 #c8d5e8 !important;
             }
+
+            /* LIGHT THEME when bg graphics OFF */
             .sidebar {
-                background: #eef2f7 !important;
-                border-right: 2px solid #0d1f3c !important;
-                padding: 24px 15px 18px 17px !important;
+                background: #1a3560 !important; /* slightly lighter navy — prints well without bg */
+                padding:28px 17px 20px 19px !important;
+                /* left accent shadow */
+                box-shadow: 2px 0 8px rgba(0,0,0,0.18) !important;
             }
-            .sb-title { color: #1a56db !important; }
-            .sb-title::after { background: #c8d3e0 !important; }
-            .contact-row { color: #1e293b !important; }
-            .contact-row i { color: #1a56db !important; }
-            .sk { background: #fff !important; border: 1px solid #64748b !important; color: #0d1f3c !important; }
-            .edu-degree { color: #0d1f3c !important; }
-            .edu-inst { color: #475569 !important; }
-            .lang-name { color: #1e293b !important; }
-            .dot { background: #cbd5e1 !important; }
-            .dot.on { background: #1a56db !important; }
-            .photo-wrap { border-color: #94a3b8 !important; background: #dde3ef !important; }
-            .main { padding: 24px 30px 18px 26px !important; }
-            .achieve-card { background: #eff6ff !important; border: 1.5px solid #1a56db !important; }
-            .achieve-num { color: #0d1f3c !important; }
-            .exp-date { background: #0d1f3c !important; color: #fff !important; }
-            .summary { background: #f4f7fb !important; }
-            .cert-card { background: #f4f7fb !important; border-color: #cbd5e1 !important; }
-            .cert-card.anthropic { background: #f0fdf4 !important; border-color: #86efac !important; }
-            .cert-card.tenms     { background: #fff7f7 !important; border-color: #fca5a5 !important; }
-            .ref-box { background: #f4f7fb !important; border-color: #cbd5e1 !important; }
-            .ref-avatar { background: #0d1f3c !important; color: #fff !important; }
+            /* These ensure text stays legible on light printers */
+            .sb-title      { color:#7fb3f5 !important; }
+            .contact-row   { color:#dce8f8 !important; }
+            .contact-row i { color:#7fb3f5 !important; }
+            .sk {
+                background: rgba(255,255,255,0.15) !important;
+                border-color: rgba(255,255,255,0.3) !important;
+                color:#e0ecff !important;
+            }
+            .edu-deg   { color:#fff !important; }
+            .edu-inst  { color:#9db8d8 !important; }
+            .lang-nm   { color:#dce8f8 !important; }
+            .dot       { background:rgba(255,255,255,0.2) !important; }
+            .dot.on    { background:#60a5fa !important; }
+            .photo-wrap{ border-color:rgba(255,255,255,0.25) !important; }
+
+            /* Main area */
+            .main { padding:26px 32px 18px 27px !important; }
+            .summary { background:#eef4fd !important; border-left-color:#1e63ee !important; }
+
+            .ach-card {
+                background:#ddeeff !important;
+                border:1.5px solid #6fa8dc !important;
+                /* card shadow */
+                box-shadow: 0 1px 4px rgba(0,60,160,0.12) !important;
+            }
+            .ach-num { color:#0d2d6e !important; }
+            .ach-lbl { color:#1a3a70 !important; }
+
+            .exp-date { background:#0d1f3c !important; color:#fff !important; }
+
+            .cert-card {
+                background:#f5f8fc !important;
+                border-color:#c8d5e8 !important;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.08) !important;
+            }
+            .cert-card.anth {
+                background:#e8faf1 !important; border-color:#5dd490 !important;
+                box-shadow:0 1px 3px rgba(0,120,60,0.1) !important;
+            }
+            .cert-card.tenm {
+                background:#fff0f0 !important; border-color:#f08080 !important;
+                box-shadow:0 1px 3px rgba(160,0,0,0.08) !important;
+            }
+
+            .ref-box {
+                background:#f5f8fc !important;
+                border:1px solid #c8d5e8 !important;
+                box-shadow: 0 1px 5px rgba(0,0,0,0.1) !important;
+            }
         }
 
-        .print-btn-wrap { text-align: center; margin: 24px 0 10px; }
-        .print-btn {
-            padding: 13px 32px; background: var(--navy); color: #fff;
-            border: none; border-radius: 6px;
-            font-family: 'Barlow', sans-serif;
-            font-size: 14px; font-weight: 700; cursor: pointer; letter-spacing: 0.5px;
-            display: inline-flex; align-items: center; gap: 10px;
-            box-shadow: 0 4px 16px rgba(13,31,60,0.25);
+        /* Screen button */
+        .btn-wrap { text-align:center; margin:22px 0 8px; }
+        .btn {
+            padding:13px 34px; background:var(--navy); color:#fff;
+            border:none; border-radius:6px;
+            font-family:'Barlow',sans-serif;
+            font-size:14px; font-weight:700; cursor:pointer; letter-spacing:0.5px;
+            display:inline-flex; align-items:center; gap:10px;
+            box-shadow:0 4px 16px rgba(13,31,60,0.28);
+            transition:background .2s;
         }
-        .print-btn:hover { background: var(--blue); }
+        .btn:hover { background:var(--blue); }
     </style>
 </head>
 <body>
 
 <div class="cv-wrap">
 
-    <!-- ════ SIDEBAR ════ -->
+    <!-- ══ SIDEBAR ══ -->
     <aside class="sidebar">
         <div class="photo-wrap">
             <img src="profile.png" alt="Zahid Hasan"
-                 onerror="this.parentElement.innerHTML='<div class=&quot;photo-placeholder&quot;><i class=&quot;fas fa-user&quot;></i></div>'">
+                 onerror="this.parentElement.innerHTML='<div class=&quot;photo-ph&quot;><i class=&quot;fas fa-user&quot;></i></div>'">
         </div>
 
         <div class="sb-block">
             <div class="sb-title">Contact</div>
-            <div class="contact-row"><i class="fas fa-phone"></i> +880 1711 183 109</div>
-            <div class="contact-row"><i class="fas fa-envelope"></i> zahidhasan1118@gmail.com</div>
-            <div class="contact-row"><i class="fas fa-map-marker-alt"></i> Nazipur, Naogaon, Bangladesh</div>
-            <div class="contact-row"><i class="fab fa-linkedin"></i> linkedin.com/in/zahidhasan1118</div>
-            <div class="contact-row"><i class="fab fa-facebook-f"></i> facebook.com/zahidhasan1118</div>
+            <div class="contact-row"><i class="fas fa-phone"></i>+880 1711 183 109</div>
+            <div class="contact-row"><i class="fas fa-envelope"></i>zahidhasan1118@gmail.com</div>
+            <div class="contact-row"><i class="fas fa-map-marker-alt"></i>Nazipur, Naogaon, Bangladesh</div>
+            <div class="contact-row"><i class="fab fa-linkedin"></i>linkedin.com/in/zahidhasan1118</div>
+            <div class="contact-row"><i class="fab fa-facebook-f"></i>facebook.com/zahidhasan1118</div>
         </div>
 
         <div class="sb-block">
@@ -304,15 +348,15 @@
         <div class="sb-block">
             <div class="sb-title">Education</div>
             <div class="edu-item">
-                <div class="edu-degree">MSS – Political Science</div>
+                <div class="edu-deg">MSS – Political Science</div>
                 <div class="edu-inst">National University · 2016</div>
             </div>
             <div class="edu-item">
-                <div class="edu-degree">BA – Political Science</div>
+                <div class="edu-deg">BA – Political Science</div>
                 <div class="edu-inst">National University · 2013</div>
             </div>
             <div class="edu-item">
-                <div class="edu-degree">Diploma in Computer Science</div>
+                <div class="edu-deg">Diploma in Computer Science</div>
                 <div class="edu-inst">Shuvo Technical Institute · 2012</div>
             </div>
         </div>
@@ -320,15 +364,15 @@
         <div class="sb-block">
             <div class="sb-title">Languages</div>
             <div class="lang-row">
-                <span class="lang-name">Bengali</span>
-                <div class="lang-dots">
+                <span class="lang-nm">Bengali</span>
+                <div class="dots">
                     <div class="dot on"></div><div class="dot on"></div>
                     <div class="dot on"></div><div class="dot on"></div><div class="dot on"></div>
                 </div>
             </div>
             <div class="lang-row">
-                <span class="lang-name">English</span>
-                <div class="lang-dots">
+                <span class="lang-nm">English</span>
+                <div class="dots">
                     <div class="dot on"></div><div class="dot on"></div>
                     <div class="dot on"></div><div class="dot on"></div><div class="dot"></div>
                 </div>
@@ -336,42 +380,42 @@
         </div>
     </aside>
 
-    <!-- ════ MAIN ════ -->
+    <!-- ══ MAIN ══ -->
     <main class="main">
 
         <div class="cv-name">Md. Zahid Hasan</div>
         <div class="cv-title">Deputy Manager — Admin &amp; Operations</div>
-        <div class="header-bar"></div>
+        <div class="hbar"></div>
 
         <div class="summary">
-            Results-oriented Operations &amp; Administration professional with <strong>10+ years of experience</strong> managing high-value corporate portfolios, legal documentation, and cross-functional teams. Proven track record of driving <strong>BDT 20 Crore+</strong> revenue, designing automated reporting systems, and ensuring regulatory compliance. Skilled in AI tools, Claude Code, and Advanced Excel to increase operational efficiency.
+            Results-oriented Operations &amp; Administration professional with <strong>10+ years of experience</strong> managing high-value corporate portfolios, legal documentation, and cross-functional teams. Proven track record of driving <strong>BDT 20 Crore+</strong> revenue, designing automated reporting systems, and ensuring regulatory compliance. Skilled in AI tools, Claude Code, and Advanced Excel to maximize operational efficiency.
         </div>
 
-        <div class="sec-title"><i class="fas fa-chart-line"></i> Key Achievements</div>
-        <div class="achieve-grid">
-            <div class="achieve-card">
-                <div class="achieve-num">৳20Cr+</div>
-                <div class="achieve-label">Corporate Sales Revenue Generated</div>
+        <div class="sec-title"><i class="fas fa-chart-line"></i>Key Achievements</div>
+        <div class="ach-grid">
+            <div class="ach-card">
+                <div class="ach-num">৳20Cr+</div>
+                <div class="ach-lbl">Corporate Sales Revenue Generated</div>
             </div>
-            <div class="achieve-card">
-                <div class="achieve-num">200+</div>
-                <div class="achieve-label">Vehicle Units Sold Strategically</div>
+            <div class="ach-card">
+                <div class="ach-num">200+</div>
+                <div class="ach-lbl">Vehicle Units Sold Strategically</div>
             </div>
-            <div class="achieve-card">
-                <div class="achieve-num">৳300Cr</div>
-                <div class="achieve-label">Portfolio Managed (Zero Discrepancy)</div>
+            <div class="ach-card">
+                <div class="ach-num">৳300Cr</div>
+                <div class="ach-lbl">Portfolio Managed (Zero Discrepancy)</div>
             </div>
         </div>
 
-        <div class="sec-title"><i class="fas fa-briefcase"></i> Professional Experience</div>
+        <div class="sec-title"><i class="fas fa-briefcase"></i>Professional Experience</div>
 
         <div class="exp-block">
             <div class="exp-top">
-                <div class="exp-company">Alliance Consortium Ltd.</div>
+                <div class="exp-co">Alliance Consortium Ltd.</div>
                 <span class="exp-date">Jan 2015 – Present · 10 yrs</span>
             </div>
             <div class="exp-role">Deputy Manager – Admin &amp; Operations</div>
-            <ul class="exp-bullets">
+            <ul class="exp-ul">
                 <li>Draft and review commercial agreements, legal notices, MoUs, and corporate correspondence ensuring full regulatory compliance.</li>
                 <li>Designed automated Excel-based systems for inventory, financial tracking, and reporting — reducing manual effort by 40%.</li>
                 <li>Drove BDT 20 Crore in revenue through strategic corporate vehicle sales, managing 200+ unit transactions end-to-end.</li>
@@ -383,83 +427,79 @@
 
         <div class="exp-block">
             <div class="exp-top">
-                <div class="exp-company">Achar King (E-Commerce)</div>
+                <div class="exp-co">Achar King (E-Commerce)</div>
                 <span class="exp-date">Jan 2022 – Present · 3 yrs</span>
             </div>
             <div class="exp-role">Founder &amp; Chief Executive Officer</div>
-            <ul class="exp-bullets">
+            <ul class="exp-ul">
                 <li>Built and scaled an e-commerce food brand; established operational and legal frameworks for supply chain management.</li>
                 <li>Managed Facebook digital marketing strategy, achieving consistent month-on-month sales growth.</li>
             </ul>
         </div>
 
-        <div class="sec-title"><i class="fas fa-certificate"></i> Certifications &amp; Training</div>
+        <div class="sec-title"><i class="fas fa-certificate"></i>Certifications &amp; Training</div>
         <div class="cert-grid">
-
-            <!-- Anthropic -->
-            <div class="cert-card anthropic">
-                <i class="fas fa-robot cert-icon green"></i>
+            <div class="cert-card anth">
+                <i class="fas fa-robot ci grn"></i>
                 <div>
-                    <div class="cert-name">Claude Code 101</div>
-                    <div class="cert-org green">Anthropic · 2025</div>
+                    <div class="cn">Claude Code 101</div>
+                    <div class="co grn">Anthropic · 2025</div>
                 </div>
             </div>
-
-            <!-- 10 Minute School — new -->
-            <div class="cert-card tenms">
-                <i class="fas fa-briefcase cert-icon red"></i>
+            <div class="cert-card tenm">
+                <i class="fas fa-briefcase ci red"></i>
                 <div>
-                    <div class="cert-name">Corporate Grooming</div>
-                    <div class="cert-org red">10 Minute School · 2021</div>
-                </div>
-            </div>
-
-            <div class="cert-card">
-                <i class="fas fa-medal cert-icon"></i>
-                <div>
-                    <div class="cert-name">Entrepreneurship &amp; Leadership</div>
-                    <div class="cert-org">Nijer Bolar Moto · 2022</div>
+                    <div class="cn">চাকরি জীবনের প্রস্তুতি</div>
+                    <div class="co red">10 Minute School · 2021</div>
                 </div>
             </div>
             <div class="cert-card">
-                <i class="fab fa-facebook cert-icon"></i>
+                <i class="fas fa-medal ci"></i>
                 <div>
-                    <div class="cert-name">Facebook Marketing</div>
-                    <div class="cert-org">10 Minute School · 2022</div>
+                    <div class="cn">Entrepreneurship &amp; Leadership</div>
+                    <div class="co">Nijer Bolar Moto · 2022</div>
                 </div>
             </div>
             <div class="cert-card">
-                <i class="fas fa-paint-brush cert-icon"></i>
+                <i class="fab fa-facebook ci"></i>
                 <div>
-                    <div class="cert-name">Graphic Design (PowerPoint)</div>
-                    <div class="cert-org">10 Minute School · 2022</div>
+                    <div class="cn">Facebook Marketing</div>
+                    <div class="co">10 Minute School · 2022</div>
                 </div>
             </div>
             <div class="cert-card">
-                <i class="fas fa-calculator cert-icon"></i>
+                <i class="fas fa-paint-brush ci"></i>
                 <div>
-                    <div class="cert-name">Tally ERP 9 Certified</div>
-                    <div class="cert-org">Trust Solution · 2015</div>
+                    <div class="cn">Graphic Design (PowerPoint)</div>
+                    <div class="co">10 Minute School · 2022</div>
+                </div>
+            </div>
+            <div class="cert-card">
+                <i class="fas fa-calculator ci"></i>
+                <div>
+                    <div class="cn">Tally ERP 9 Certified</div>
+                    <div class="co">Trust Solution · 2015</div>
                 </div>
             </div>
         </div>
 
-        <div class="sec-title"><i class="fas fa-user-check"></i> Reference</div>
+        <div class="sec-title"><i class="fas fa-user-check"></i>Reference</div>
+        <!-- Simple reference — no avatar -->
         <div class="ref-box">
-            <div class="ref-avatar">AI</div>
-            <div>
-                <div class="ref-name">Mohammad Aminul Islam</div>
-                <div class="ref-pos">Executive Director, Alliance Consortium Ltd.</div>
-                <div class="ref-email"><i class="fas fa-envelope" style="font-size:9px;margin-right:4px;"></i>alliance.bd@gmail.com</div>
+            <div class="ref-nm">Mohammad Aminul Islam</div>
+            <div class="ref-pos">Executive Director, Alliance Consortium Ltd.</div>
+            <div class="ref-em">
+                <i class="fas fa-envelope" style="font-size:10px;color:var(--blue);"></i>
+                alliance.bd@gmail.com
             </div>
         </div>
 
     </main>
 </div>
 
-<div class="print-btn-wrap no-print">
-    <button class="print-btn" onclick="window.print()">
-        <i class="fas fa-print"></i> Print / Save as PDF (One Page)
+<div class="btn-wrap no-print">
+    <button class="btn" onclick="window.print()">
+        <i class="fas fa-file-pdf"></i> Save as PDF (High Resolution)
     </button>
 </div>
 
