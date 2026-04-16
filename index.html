@@ -2,454 +2,287 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1000, initial-scale=0.3, maximum-scale=5.0, user-scalable=yes">
-    <title>Md. Zahid Hasan - CV</title>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md. Rafiqul Islam - Professional CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --navy:  #0d1f3c;
-            --blue:  #1e63ee;
-            --blue2: #1348b8;
-            --g50:   #f8fafc;
-            --g100:  #f1f5f9;
-            --g200:  #e2e8f0;
-            --g300:  #cbd5e1;
-            --g400:  #94a3b8;
-            --g600:  #3d526b;
-            --g800:  #1a2a3a;
-            --white: #ffffff;
-            --side:  #1b2e4b;
-            --sacc:  #4a90d9;
-            --stxt:  #dde8f4;
-            --smut:  #8aaac8;
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --text-main: #1e293b;
+            --text-dark: #000000;
+            --bg-sidebar: #f8fafc;
         }
-        @page { size:A4; margin:0; }
-        * { margin:0; padding:0; box-sizing:border-box; }
+
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+
+        @media print {
+            body { padding: 0; background: #fff; }
+            .no-print { display: none; }
+            .cv-container { box-shadow: none; border: none; width: 100%; }
+            a { text-decoration: none; color: var(--text-dark); }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family:'Barlow',sans-serif;
-            background:#b8c4d8;
-            color:#0a0a0a;
-            padding:28px 0 44px;
-            min-width:1020px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #f1f5f9;
+            color: var(--text-main);
+            line-height: 1.5;
+            padding: 40px 0;
         }
 
-        .cv-wrap {
-            width:794px; height:1123px;
-            margin:0 auto;
-            background:#fff;
-            border-radius:4px;
-            overflow:hidden;
-            display:grid;
-            grid-template-columns:226px 1fr;
-            box-shadow:
-                0 2px 4px rgba(0,0,0,0.04),
-                0 8px 20px rgba(0,0,0,0.10),
-                0 28px 60px rgba(0,0,0,0.16);
+        .cv-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
         }
 
-        /* ═══ SIDEBAR ═══ */
-        .sidebar {
-            background:var(--side);
-            padding:32px 20px 24px 22px;
-            display:flex; flex-direction:column;
-            overflow:hidden;
-            box-shadow:inset -1px 0 0 rgba(255,255,255,0.06);
-        }
-        .photo-wrap {
-            width:102px; height:102px;
-            border-radius:8px; overflow:hidden;
-            border:3px solid rgba(255,255,255,0.18);
-            margin-bottom:22px;
-            background:rgba(255,255,255,0.08);
-            flex-shrink:0;
-            box-shadow:0 4px 12px rgba(0,0,0,0.3);
-        }
-        .photo-wrap img { width:100%; height:100%; object-fit:cover; }
-        .photo-ph {
-            width:100%; height:100%;
-            display:flex; align-items:center; justify-content:center;
-            font-size:34px; color:rgba(255,255,255,0.3);
-        }
-        .sb-block { margin-bottom:19px; flex-shrink:0; }
-        .sb-title {
-            font-family:'Barlow Condensed',sans-serif;
-            font-size:10.5px; font-weight:800;
-            text-transform:uppercase; letter-spacing:2.2px;
-            color:var(--sacc); margin-bottom:10px;
-            display:flex; align-items:center; gap:7px;
-        }
-        .sb-title::after { content:''; flex:1; height:1px; background:rgba(255,255,255,0.10); }
-        .contact-row {
-            display:flex; align-items:flex-start; gap:9px;
-            font-size:12px; font-weight:500;
-            color:var(--stxt); margin-bottom:8px; line-height:1.4;
-        }
-        .contact-row i { color:var(--sacc); width:13px; margin-top:2px; font-size:11px; flex-shrink:0; }
-        .skills-list { display:flex; flex-wrap:wrap; gap:5px; }
-        .sk {
-            background:rgba(255,255,255,0.09);
-            border:1px solid rgba(255,255,255,0.18);
-            color:#d4e4f7;
-            padding:3px 9px; border-radius:3px;
-            font-size:10.5px; font-weight:600;
-        }
-        .edu-item { margin-bottom:10px; }
-        .edu-deg  { font-size:12.5px; font-weight:700; color:#fff; line-height:1.3; }
-        .edu-inst { font-size:11px; color:var(--smut); margin-top:2px; }
-        .lang-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
-        .lang-nm  { font-size:12px; font-weight:600; color:var(--stxt); }
-        .dots     { display:flex; gap:4px; }
-        .dot      { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.15); }
-        .dot.on   { background:var(--sacc); }
-
-        /* ═══ MAIN ═══ */
-        .main {
-            padding:30px 36px 22px 31px;
-            overflow:hidden;
-            display:flex; flex-direction:column;
-            background:#fff;
-        }
-        .cv-name {
-            font-family:'Barlow Condensed',sans-serif;
-            font-size:44px; font-weight:800;
-            color:var(--navy); letter-spacing:-1px; line-height:1;
-            text-transform:uppercase;
-        }
-        .cv-title {
-            font-size:12.5px; font-weight:700;
-            color:var(--blue); text-transform:uppercase;
-            letter-spacing:2.5px; margin-top:5px;
-        }
-        .hbar {
-            height:3px;
-            background:linear-gradient(90deg,var(--navy) 0%,var(--blue) 50%,rgba(30,99,238,0.1) 100%);
-            margin:11px 0 13px; border-radius:2px;
-        }
-        .summary {
-            font-size:12.5px; font-weight:500;
-            color:var(--g600); line-height:1.68; text-align:justify;
-            padding:11px 14px;
-            background:#f4f8ff;
-            border-left:3px solid var(--blue);
-            border-radius:0 5px 5px 0;
-            box-shadow:2px 2px 8px rgba(30,99,238,0.07);
-        }
-        .sec-title {
-            font-family:'Barlow Condensed',sans-serif;
-            font-size:14px; font-weight:800;
-            text-transform:uppercase; letter-spacing:1.5px;
-            color:var(--navy);
-            display:flex; align-items:center; gap:8px;
-            margin-bottom:10px; margin-top:15px;
-        }
-        .sec-title i { color:var(--blue); font-size:12.5px; }
-        .sec-title::after { content:''; flex:1; height:1.5px; background:var(--g200); }
-
-        /* Achievements */
-        .ach-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
-        .ach-card {
-            background:linear-gradient(135deg,#eaf2ff 0%,#ddeafc 100%);
-            border:1.5px solid #b8d0f5; border-radius:7px;
-            padding:7px 10px; text-align:center;
-            box-shadow:0 2px 8px rgba(30,99,238,0.10),inset 0 1px 0 rgba(255,255,255,0.6);
-        }
-        .ach-num {
-            font-family:'Barlow Condensed',sans-serif;
-            font-size:21px; font-weight:800; color:var(--blue2); line-height:1;
-        }
-        .ach-lbl { font-size:10px; font-weight:600; color:#2d4a7a; margin-top:2px; line-height:1.25; }
-
-        /* Experience */
-        .exp-block { margin-bottom:12px; }
-        .exp-top   { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:2px; }
-        .exp-co    { font-size:14px; font-weight:800; color:var(--navy); }
-        .exp-date  {
-            font-size:10.5px; font-weight:700;
-            color:#fff; background:var(--navy);
-            padding:2px 10px; border-radius:20px;
-            white-space:nowrap; flex-shrink:0;
-            box-shadow:0 1px 4px rgba(13,31,60,0.25);
-        }
-        .exp-role  { font-size:12.5px; font-weight:700; color:var(--blue); margin-bottom:5px; }
-        .exp-ul    { list-style:none; }
-        .exp-ul li {
-            font-size:12.5px; font-weight:500; color:var(--g800);
-            padding-left:15px; position:relative;
-            margin-bottom:3.5px; line-height:1.52; text-align:justify;
-        }
-        .exp-ul li::before { content:"▸"; position:absolute; left:0; color:var(--blue); font-size:10px; top:2px; }
-
-        /* Certifications */
-        .cert-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:7px; }
-        .cert-card {
-            background:var(--g50); border:1px solid var(--g200);
-            border-radius:6px; padding:8px 10px;
-            display:flex; gap:8px; align-items:flex-start;
-            box-shadow:0 1px 4px rgba(0,0,0,0.05),inset 0 1px 0 rgba(255,255,255,0.8);
-        }
-        .cert-card.anth {
-            background:linear-gradient(135deg,#edfbf3,#d4f5e4);
-            border:1.5px solid #5dd490;
-            box-shadow:0 2px 6px rgba(21,128,61,0.10),inset 0 1px 0 rgba(255,255,255,0.7);
-        }
-        .cert-card.tenm {
-            background:linear-gradient(135deg,#fff4f4,#fde8e8);
-            border:1.5px solid #f08080;
-            box-shadow:0 2px 6px rgba(196,43,43,0.10),inset 0 1px 0 rgba(255,255,255,0.7);
-        }
-        .ci     { color:var(--blue); font-size:12px; margin-top:1px; flex-shrink:0; }
-        .ci.grn { color:#15803d; }
-        .ci.red { color:#c42b2b; }
-        .cn     { font-size:11.5px; font-weight:700; color:var(--navy); line-height:1.3; }
-        .co     { font-size:10px; font-weight:500; color:var(--g400); margin-top:2px; }
-        .co.grn { color:#15803d; font-weight:600; }
-        .co.red { color:#c42b2b; font-weight:600; }
-
-        /* Reference */
-        .ref-box {
-            background:linear-gradient(135deg,#f4f8ff 0%,#eaf1fd 100%);
-            border:1px solid #c2d4ef; border-radius:7px;
-            padding:12px 16px; margin-top:14px;
-            box-shadow:0 2px 10px rgba(30,99,238,0.08),inset 0 1px 0 rgba(255,255,255,0.9);
-        }
-        .ref-nm  { font-size:13px; font-weight:800; color:var(--navy); }
-        .ref-pos { font-size:11px; font-weight:500; color:var(--g600); margin-top:3px; }
-        .ref-em  { font-size:11px; color:var(--blue); margin-top:4px; display:flex; align-items:center; gap:5px; }
-
-        /* ═══════════════════════════════════════
-           PRINT — PREMIUM LIGHT THEME
-           Background graphics OFF → still looks
-           premium with borders + print shadows
-        ═══════════════════════════════════════ */
-        @media print {
-            * { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
-            body { background:#fff !important; padding:0 !important; min-width:auto !important; }
-            .no-print { display:none !important; }
-
-            .cv-wrap {
-                width:210mm !important; height:297mm !important;
-                max-height:297mm !important;
-                border-radius:0 !important; overflow:hidden !important;
-                box-shadow:none !important;
-                grid-template-columns:202px 1fr !important;
-                border:1px solid #c0cfe8 !important;
-            }
-
-            /* Premium light sidebar for print */
-            .sidebar {
-                background:#f0f5fb !important;
-                border-right:2.5px solid #9ab4d4 !important;
-                padding:28px 18px 20px 20px !important;
-                /* Simulated depth via border shading */
-                box-shadow:3px 0 0 #dce8f5, 4px 0 0 #eaf2fc !important;
-            }
-            .sb-title { color:#1248b0 !important; }
-            .sb-title::after { background:#b8cee6 !important; }
-            .contact-row { color:#0f1e36 !important; }
-            .contact-row i { color:#1248b0 !important; }
-            .sk {
-                background:#fff !important;
-                border:1px solid #7a9fc0 !important;
-                color:#0d1f3c !important;
-                box-shadow:0 1px 2px rgba(0,0,0,0.08) !important;
-            }
-            .edu-deg  { color:#0d1f3c !important; }
-            .edu-inst { color:#4a6a8a !important; }
-            .lang-nm  { color:#0f1e36 !important; }
-            .dot      { background:#c0d4ea !important; border:1px solid #9ab4d4 !important; }
-            .dot.on   { background:#1248b0 !important; border-color:#1248b0 !important; }
-            .photo-wrap {
-                border:2.5px solid #7a9fc0 !important;
-                box-shadow:0 3px 8px rgba(0,20,60,0.15) !important;
-            }
-
-            /* Main */
-            .main { padding:26px 32px 18px 27px !important; }
-            .cv-name  { color:#0d1f3c !important; }
-            .cv-title { color:#1248b0 !important; }
-            .hbar     { background:linear-gradient(90deg,#0d1f3c,#1e63ee,rgba(30,99,238,0.08)) !important; }
-
-            .summary {
-                background:#eef4ff !important;
-                border-left:3px solid #1248b0 !important;
-                color:#2a3f5a !important;
-                box-shadow:2px 2px 5px rgba(18,72,176,0.08) !important;
-            }
-
-            .sec-title      { color:#0d1f3c !important; }
-            .sec-title i    { color:#1248b0 !important; }
-            .sec-title::after { background:#b8cee6 !important; }
-
-            /* Achievement — premium shading */
-            .ach-card {
-                background:#ddeeff !important;
-                border:1.5px solid #6a9ee0 !important;
-                box-shadow:
-                    0 2px 0 #b0caf0,
-                    0 3px 6px rgba(18,72,176,0.12),
-                    inset 0 1px 0 rgba(255,255,255,0.85) !important;
-            }
-            .ach-num { color:#0a2d78 !important; }
-            .ach-lbl { color:#143260 !important; }
-
-            .exp-date {
-                background:#0d1f3c !important; color:#fff !important;
-                box-shadow:0 1px 3px rgba(0,0,0,0.2) !important;
-            }
-            .exp-co   { color:#0d1f3c !important; }
-            .exp-role { color:#1248b0 !important; }
-            .exp-ul li { color:#1a2a3a !important; }
-            .exp-ul li::before { color:#1248b0 !important; }
-
-            /* Cert cards — shadow depth effect */
-            .cert-card {
-                background:#f5f9ff !important;
-                border:1px solid #b0c8e4 !important;
-                box-shadow:
-                    0 2px 0 #c8daf0,
-                    0 3px 6px rgba(0,30,80,0.08),
-                    inset 0 1px 0 rgba(255,255,255,1) !important;
-            }
-            .cert-card.anth {
-                background:#e6f9ef !important;
-                border:1.5px solid #48c878 !important;
-                box-shadow:
-                    0 2px 0 #a0deba,
-                    0 3px 6px rgba(20,100,50,0.10),
-                    inset 0 1px 0 rgba(255,255,255,0.9) !important;
-            }
-            .cert-card.tenm {
-                background:#fff0f0 !important;
-                border:1.5px solid #e07070 !important;
-                box-shadow:
-                    0 2px 0 #f0b0b0,
-                    0 3px 6px rgba(160,20,20,0.08),
-                    inset 0 1px 0 rgba(255,255,255,0.9) !important;
-            }
-            .cn { color:#0d1f3c !important; }
-
-            /* Reference — elevated card look */
-            .ref-box {
-                background:#eef5ff !important;
-                border:1.5px solid #8ab0d4 !important;
-                box-shadow:
-                    0 3px 0 #b8d0ea,
-                    0 5px 12px rgba(18,72,176,0.10),
-                    inset 0 1px 0 rgba(255,255,255,1) !important;
-            }
-            .ref-nm  { color:#0d1f3c !important; }
-            .ref-pos { color:#3d526b !important; }
-            .ref-em  { color:#1248b0 !important; }
+        /* Header Section */
+        .header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
         }
 
-        /* Button */
-        .btn-wrap { text-align:center; margin:24px 0 8px; }
-        .btn {
-            padding:13px 36px; background:var(--navy); color:#fff;
-            border:none; border-radius:7px;
-            font-family:'Barlow',sans-serif;
-            font-size:14px; font-weight:700; cursor:pointer; letter-spacing:0.5px;
-            display:inline-flex; align-items:center; gap:10px;
-            box-shadow:0 4px 16px rgba(13,31,60,0.28),0 1px 3px rgba(0,0,0,0.1);
-            transition:all .2s;
+        .name {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
         }
-        .btn:hover { background:var(--blue); transform:translateY(-1px); box-shadow:0 6px 20px rgba(30,99,238,0.35); }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .contact-info span { display: flex; align-items: center; gap: 6px; }
+        .contact-info i { color: var(--accent); }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 25px 0 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #e2e8f0;
+        }
+
+        /* Profile Text */
+        .profile-summary {
+            font-size: 14px;
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        /* Experience & Education Item */
+        .entry {
+            margin-bottom: 18px;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .entry-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .entry-org {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .entry-date {
+            font-size: 12px;
+            font-weight: 700;
+            color: #64748b;
+        }
+
+        .entry-list {
+            list-style: none;
+            margin-top: 6px;
+            font-size: 13.5px;
+        }
+
+        .entry-list li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 4px;
+        }
+
+        .entry-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Skills Grid */
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .skill-group {
+            font-size: 13.5px;
+        }
+
+        .skill-group strong { color: var(--text-dark); }
+
+        /* Training Cards */
+        .training-box {
+            background: #f8fafc;
+            padding: 12px;
+            border-left: 3px solid var(--accent);
+            font-size: 13px;
+        }
+
+        /* Buttons */
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            padding: 12px 25px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
     </style>
 </head>
 <body>
 
-<div class="cv-wrap">
+    <button class="print-btn no-print" onclick="window.print()">
+        <i class="fas fa-print"></i> Download PDF
+    </button>
 
-    <!-- ══ SIDEBAR ══ -->
-    <aside class="sidebar">
-        <div class="photo-wrap">
-            <img src="profile.png" alt="Zahid Hasan"
-                 onerror="this.parentElement.innerHTML='<div class=&quot;photo-ph&quot;><i class=&quot;fas fa-user&quot;></i></div>'">
-        </div>
-
-        <div class="sb-block">
-            <div class="sb-title">Contact</div>
-            <div class="contact-row"><i class="fas fa-phone"></i>+880 1711 183 109</div>
-            <div class="contact-row"><i class="fas fa-envelope"></i>zahidhasan1118@gmail.com</div>
-            <div class="contact-row"><i class="fas fa-map-marker-alt"></i>Nazipur, Naogaon, Bangladesh</div>
-            <div class="contact-row"><i class="fab fa-linkedin"></i>linkedin.com/in/zahidhasan1118</div>
-            <div class="contact-row"><i class="fab fa-facebook-f"></i>facebook.com/zahidhasan1118</div>
-        </div>
-
-        <div class="sb-block">
-            <div class="sb-title">Core Skills</div>
-            <div class="skills-list">
-                <span class="sk">Corporate Drafting</span>
-                <span class="sk">Process Automation</span>
-                <span class="sk">Advanced Excel</span>
-                <span class="sk">AI Workflows</span>
-                <span class="sk">Claude Code</span>
-                <span class="sk">Tally Prime</span>
-                <span class="sk">Graphic Design</span>
-                <span class="sk">Facebook Marketing</span>
-                <span class="sk">Regulatory Affairs</span>
-                <span class="sk">BRTA Documentation</span>
-                <span class="sk">Supply Chain</span>
+    <div class="cv-container">
+        <header class="header">
+            <h1 class="name">Md. Rafiqul Islam</h1>
+            <div class="contact-info">
+                <span><i class="fas fa-map-marker-alt"></i> South Dania, Dhaka</span>
+                <span><i class="fas fa-phone"></i> +8801872148909</span>
+                <span><i class="fas fa-envelope"></i> pmdrafiqjnu@gmail.com</span>
+                <span><i class="fab fa-linkedin"></i> linkedin.com/in/pmdrafjnu</span>
             </div>
-        </div>
+        </header>
 
-        <div class="sb-block">
-            <div class="sb-title">Education</div>
-            <div class="edu-item">
-                <div class="edu-deg">MSS – Political Science</div>
-                <div class="edu-inst">National University · 2016</div>
-            </div>
-            <div class="edu-item">
-                <div class="edu-deg">BA – Political Science</div>
-                <div class="edu-inst">National University · 2013</div>
-            </div>
-            <div class="edu-item">
-                <div class="edu-deg">Diploma in Computer Science</div>
-                <div class="edu-inst">Shuvo Technical Institute · 2012</div>
-            </div>
-        </div>
+        <section>
+            <h2 class="section-title">Personal Statement</h2>
+            <p class="profile-summary">
+                Dedicated Medical Physics and Nuclear Medicine researcher with an M.Sc. in Physics from Jagannath University. Expert in radioiodine (I-131) uptake assessment and Tc-99m thyroid scintigraphy. Skilled in radiotherapy planning, AI-based health-physics analysis, and gamma camera operations. Passionate about contributing to advanced cancer care and clinical imaging technologies.
+            </p>
+        </section>
 
-        <div class="sb-block">
-            <div class="sb-title">Languages</div>
-            <div class="lang-row">
-                <span class="lang-nm">Bengali</span>
-                <div class="dots">
-                    <div class="dot on"></div><div class="dot on"></div>
-                    <div class="dot on"></div><div class="dot on"></div><div class="dot on"></div>
+        <section>
+            <h2 class="section-title">Research Experience</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Graduate Researcher (Medical Physics)</span>
+                    <span class="entry-date">May 2024 — Jan 2026</span>
+                </div>
+                <div class="entry-org">National Institute of Nuclear Medicine & Allied Sciences (NINMAS)</div>
+                <ul class="entry-list">
+                    <li>Conducted comprehensive thesis research on Radioiodine (I-131) uptake assessment.</li>
+                    <li>Utilized Tc-99m Thyroid Scintigraphy for comparative quantitative analysis and clinical reliability.</li>
+                    <li>Operated high-precision gamma cameras and thyroid uptake probes for patient data collection.</li>
+                    <li>Ensured radiation safety protocols during radiopharmaceutical handling and patient monitoring.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Education</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">M.Sc. in Physics (Thesis Group)</span>
+                    <span class="entry-date">Passing Year: 2026</span>
+                </div>
+                <div class="entry-org">Jagannath University, Dhaka | CGPA: 3.67 / 4.00</div>
+            </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">B.Sc. in Physics</span>
+                    <span class="entry-date">Passing Year: 2024</span>
+                </div>
+                <div class="entry-org">Jagannath University, Dhaka | CGPA: 3.28 / 4.00</div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Professional Training</h2>
+            <div class="training-box">
+                <strong>Integrated Radiotherapy Practice for Medical Physicists</strong><br>
+                South Asia Centre for Medical Physics and Cancer Research (SCMPCR) | April 2026<br>
+                Focus: IMRT/VMAT, 4D-CT motion management, and AI-based planning (Accredited by EBAMP).
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-container">
+                <div class="skill-group">
+                    <strong>Technical:</strong> Thyroid Scintigraphy, Gamma Camera Ops, Radiation Safety, Radioiodine Therapy.
+                </div>
+                <div class="skill-group">
+                    <strong>Computational:</strong> C, Python, Monte Carlo Simulation (Basic), MS Office.
+                </div>
+                <div class="skill-group">
+                    <strong>Soft Skills:</strong> Scientific Reporting, Team Collaboration, Strategic Planning.
+                </div>
+                <div class="skill-group">
+                    <strong>Languages:</strong> Bengali (Native), English (Academic Proficiency).
                 </div>
             </div>
-            <div class="lang-row">
-                <span class="lang-nm">English</span>
-                <div class="dots">
-                    <div class="dot on"></div><div class="dot on"></div>
-                    <div class="dot on"></div><div class="dot on"></div><div class="dot"></div>
-                </div>
-            </div>
-        </div>
-    </aside>
+        </section>
 
-    <!-- ══ MAIN ══ -->
-    <main class="main">
-        <div class="cv-name">Md. Zahid Hasan</div>
-        <div class="cv-title">Deputy Manager — Admin &amp; Operations</div>
-        <div class="hbar"></div>
-
-        <div class="summary">
-            Results-oriented Operations &amp; Administration professional with <strong>10+ years of experience</strong> managing high-value corporate portfolios, legal documentation, and cross-functional teams. Proven track record of driving <strong>BDT 20 Crore+</strong> revenue, designing automated reporting systems, and ensuring regulatory compliance. Skilled in AI tools, Claude Code, and Advanced Excel to maximize operational efficiency.
-        </div>
-
-        <div class="sec-title"><i class="fas fa-chart-line"></i>Key Achievements</div>
-        <div class="ach-grid">
-            <div class="ach-card">
-                <div class="ach-num">৳20Cr+</div>
-                <div class="ach-lbl">Corporate Sales Revenue Generated</div>
+        <section>
+            <h2 class="section-title">Publications & Volunteering</h2>
+            <div class="entry" style="font-size: 13.5px;">
+                <strong>Chapter Author:</strong> University Admission Guidebook, Projonmo Publishers.<br>
+                <strong>Volunteer Teacher:</strong> Dream Life Foundation (2022-2024) - Provided education for underprivileged students.
             </div>
-            <div class="ach-card">
-                <div class="ach-num">200+</div>
-                <div class="ach-lbl">Vehicle Units Sold Strategically</div>
-            </div>
-            <div class="ach-card">
-                <div class="ach-num">৳300Cr</div>
-                <div class="ach-lbl">Portfolio Managed (Z
+        </section>
+    </div>
+
+</body>
+</html>
